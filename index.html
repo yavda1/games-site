@@ -199,20 +199,25 @@
 });
 
         
-      document.getElementById("PKMN_Rocket_Version").addEventListener("click", function () {
+document.getElementById("PKMN_Rocket_Version").addEventListener("click", function () {
+    let passw;
+    passw = window.prompt("password");
+    if (randomStrings.includes(passw)) {
         var newWindow = window.open('about:blank', '_blank');
-
         if (newWindow) {
-          var iframe = document.createElement('iframe');
-          iframe.src = '/404.html';
-          iframe.width = '100%';
-          iframe.height = '100%';
-          newWindow.document.body.appendChild(iframe);
-          window.close();
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://native-lime.vercel.app/';
+            iframe.width = '100%';
+            iframe.height = '100%';
+            newWindow.document.body.appendChild(iframe);
+            window.close();
         } else {
-          console.error('Unable to open a new window with about:blank');
+            console.error('Unable to open a new window with about:blank');
         }
-      });
+    } else {
+        alert("Invalid password");
+    }
+});
     
     </script>
     
